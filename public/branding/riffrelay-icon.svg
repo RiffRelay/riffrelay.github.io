@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">RiffRelay mark</title>
+  <desc id="description">A bright R monogram with a violet relay node on a dark Discord-inspired field.</desc>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="#1E1F22"/>
+  <path d="M151 390V124h113c70 0 109 36 109 93 0 47-27 76-73 89l90 84m-239-84h110" fill="none" stroke="#F2F3F5" stroke-linecap="round" stroke-linejoin="round" stroke-width="38"/>
+</svg>

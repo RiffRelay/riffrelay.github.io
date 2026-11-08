@@ -1,0 +1,234 @@
+{
+  "overview": {
+    "0": {
+      "language": "typescript",
+      "code": "import { ListenBrainzClient } from \"listenbrainz-api\";\n\nconst lb = new ListenBrainzClient({ userAgent: \"MyApp/1.0 (https://example.com)\" });\nconst recent = await lb.getListens(\"alice\", { count: 5 });\nconsole.log(recent.payload.listens[0]?.track_metadata.track_name);"
+    },
+    "1": {
+      "language": "plaintext",
+      "code": "/nowplaying\n/recent count: 5\n/topartists"
+    },
+    "2": {
+      "language": "typescript",
+      "code": "import { ListenBrainzError } from \"listenbrainz-api\";\n\ntry {\n  await lb.getPlayingNow(\"alice\");\n} catch (error) {\n  if (error instanceof ListenBrainzError) console.error(error.status, error.path);\n  throw error;\n}"
+    },
+    "3": {
+      "language": "bash",
+      "code": "bun add listenbrainz-api\n\n# Then import the client from \"listenbrainz-api\"."
+    }
+  },
+  "quickstart": {
+    "2": {
+      "language": "typescript",
+      "code": "const lb = new ListenBrainzClient({\n  baseUrl: \"https://api.listenbrainz.org\",\n  userAgent: \"MyApp/1.0 (https://example.com)\",\n  token: process.env.LISTENBRAINZ_TOKEN,\n});"
+    },
+    "3": {
+      "language": "typescript",
+      "code": "const token = process.env.LISTENBRAINZ_TOKEN!;\nconst validation = await lb.validateToken(token);\nconsole.log(validation); // Keep the token itself private."
+    }
+  },
+  "listens": {
+    "1": {
+      "language": "typescript",
+      "code": "const firstPage = await lb.getListens(\"alice\", { count: 100 });\nconst last = firstPage.payload.listens.at(-1);\nif (last?.listened_at) {\n  const older = await lb.getListens(\"alice\", { count: 100, maxTs: last.listened_at });\n}"
+    },
+    "3": {
+      "language": "typescript",
+      "code": "const count = await lb.getListenCount(\"alice\");\nconst latestImport = await lb.getLatestImport(\"alice\");\nconsole.log({ count, latestImport: latestImport?.payload.latest_import ?? null });"
+    },
+    "4": {
+      "language": "plaintext",
+      "code": "/nowplaying\n!nowplaying\n!np\n!now"
+    }
+  },
+  "statistics": {
+    "0": {
+      "language": "typescript",
+      "code": "const [artists, albums] = await Promise.all([\n  lb.getArtistStats(\"alice\", { range: \"this_month\", count: 10 }),\n  lb.getAlbumStats(\"alice\", { range: \"this_month\", count: 10 }),\n]);"
+    },
+    "1": {
+      "language": "typescript",
+      "code": "const page = await lb.getStats(\"alice\", \"artists\", {\n  range: \"all_time\",\n  count: 25,\n  offset: 25,\n});"
+    },
+    "3": {
+      "language": "plaintext",
+      "code": "/top entity: artists period: this_week count: 10\n/topalbums period: this_month\n/overall"
+    },
+    "4": {
+      "language": "typescript",
+      "code": "const [alice, bob] = await Promise.all([\n  lb.getArtistStats(\"alice\", { range: \"all_time\", count: 50 }),\n  lb.getArtistStats(\"bob\", { range: \"all_time\", count: 50 }),\n]);\n// Compare stable artist MBIDs when available; names are a fallback."
+    }
+  },
+  "writes": {
+    "0": {
+      "language": "typescript",
+      "code": "const validation = await lb.validateToken(token);\nif (!validation) throw new Error(\"Token validation returned no result\");\n// Keep token in a secret store; never put it in a message or URL."
+    },
+    "2": {
+      "language": "typescript",
+      "code": "await lb.submitFeedback(token, { recordingMsid, score: 1 });\nawait lb.pin(token, { recordingMsid, blurb: \"Worth another listen\" });\n// score 0 removes feedback; -1 is negative feedback."
+    },
+    "3": {
+      "language": "typescript",
+      "code": "if (!listen.track_metadata.additional_info?.recording_msid) {\n  console.log(\"This listen cannot be pinned or rated by recording MSID.\");\n}"
+    },
+    "4": {
+      "language": "typescript",
+      "code": "await lb.deleteListen(token, {\n  listenedAt: listen.listened_at!,\n  recordingMsid,\n});"
+    },
+    "6": {
+      "language": "typescript",
+      "code": "const token = process.env.LISTENBRAINZ_TOKEN;\nif (!token) throw new Error(\"Set LISTENBRAINZ_TOKEN in your secret environment\");\nconst lb = new ListenBrainzClient({ token, userAgent: \"MyApp/1.0 (https://example.com)\" });"
+    }
+  },
+  "metadata": {
+    "1": {
+      "language": "typescript",
+      "code": "const recording = await lb.getRecordingMetadata(recordingMbid);\nconst artist = await lb.getArtistMetadata(artistMbid);\nconsole.log({ recording, artist });"
+    },
+    "2": {
+      "language": "typescript",
+      "code": "import { MusicBrainzClient } from \"listenbrainz-api\";\n\nconst mb = new MusicBrainzClient({ userAgent: \"MyApp/1.0 (contact@example.com)\" });\nconst artists = await mb.searchArtist(\"Björk\", 5);"
+    },
+    "4": {
+      "language": "typescript",
+      "code": "const candidates = await mb.searchRecording(\"Human Behaviour\", 5);\nfor (const candidate of candidates) {\n  console.log(candidate.id, candidate.title);\n}"
+    },
+    "5": {
+      "language": "typescript",
+      "code": "import { coverArtUrl } from \"listenbrainz-api\";\n\nconst url = coverArtUrl(\"release-mbid\");\n// The helper builds a URL; it does not fetch or guarantee artwork."
+    }
+  },
+  "discovery": {
+    "0": {
+      "language": "typescript",
+      "code": "const popular = await lb.getPopularArtists(10);\nconst releases = await lb.getPopularReleases(10);\nconsole.log(popular, releases);"
+    },
+    "1": {
+      "language": "typescript",
+      "code": "const recommendations = await lb.getRecommendedRecordings(\"alice\", { count: 10 });\nconsole.log(recommendations.payload.mbids);"
+    },
+    "2": {
+      "language": "typescript",
+      "code": "const similar = await lb.getSimilarUsers(\"alice\", { count: 10 });\nfor (const user of similar.payload.similar_users ?? []) {\n  console.log(user.user_name, user.similarity);\n}"
+    },
+    "3": {
+      "language": "plaintext",
+      "code": "/search query: Radiohead\n/artist name: Björk\n/fresh"
+    },
+    "4": {
+      "language": "typescript",
+      "code": "const response = await lb.getPopularRecordings(10);\nconst rows = response.payload?.recordings ?? [];\nif (rows.length === 0) console.log(\"No results are available for this query.\");"
+    }
+  },
+  "errors": {
+    "0": {
+      "language": "typescript",
+      "code": "try {\n  await lb.getListens(\"alice\");\n} catch (error) {\n  if (error instanceof ListenBrainzError) console.error(error.status, error.path, error.message);\n  else throw error;\n}"
+    },
+    "1": {
+      "language": "typescript",
+      "code": "const response = await lb.request<unknown>({\n  path: \"/1/status/service-status\",\n  retries: 2,\n});"
+    },
+    "2": {
+      "language": "typescript",
+      "code": "const response = await lb.request<unknown>({\n  path: \"/1/status/service-status\",\n  timeoutMs: 8_000,\n  retries: 0,\n});"
+    },
+    "3": {
+      "language": "typescript",
+      "code": "const raw = await lb.request<unknown>({ path: \"/1/status/service-status\" });\nif (raw === null) {\n  console.log(\"The response was valid HTTP but not valid JSON.\");\n}"
+    },
+    "4": {
+      "language": "typescript",
+      "code": "try {\n  await lb.getListens(\"alice\", { count: 10 });\n} catch (error) {\n  if (error instanceof ListenBrainzError) console.error({ status: error.status, path: error.path });\n  throw error;\n}"
+    }
+  },
+  "bot-commands": {
+    "0": {
+      "language": "plaintext",
+      "code": "/nowplaying\n!nowplaying\n!np"
+    },
+    "1": {
+      "language": "plaintext",
+      "code": "/nowplaying\n/nowplaying user: @friend\n!np"
+    },
+    "2": {
+      "language": "plaintext",
+      "code": "/recent count: 25\n/top entity: artists period: this_week count: 10\n/setprefix prefix: ?"
+    },
+    "3": {
+      "language": "plaintext",
+      "code": "Listening: /nowplaying · /recent · /feed\nStats: /top · /weekly · /overall\nExplore: /search · /artist · /fresh"
+    },
+    "4": {
+      "language": "plaintext",
+      "code": "A command may show cover art or MusicBrainz links when metadata exists.\nOptional lookups can fail without blocking the main track response."
+    },
+    "5": {
+      "language": "plaintext",
+      "code": "/login\n# Enter your ListenBrainz user token only in the private modal."
+    }
+  },
+  "routes": {
+    "0": {
+      "language": "typescript",
+      "code": "type StatusResponse = { status: string };\nconst status = await lb.request<StatusResponse>({ path: \"/1/status/service-status\" });\nconsole.log(status.status);"
+    },
+    "1": {
+      "language": "typescript",
+      "code": "const response = await lb.request<unknown>({\n  path: \"/1/user/alice/listens\",\n  query: { count: 5, max_ts: Math.floor(Date.now() / 1000) },\n});"
+    },
+    "2": {
+      "language": "typescript",
+      "code": "const stats = await lb.request<unknown>({\n  path: \"/1/stats/user/alice/artists\",\n  query: { range: \"this_month\", count: 10, offset: 0 },\n});"
+    },
+    "3": {
+      "language": "typescript",
+      "code": "const playlists = await lb.request<unknown>({\n  path: \"/1/user/alice/playlists\",\n});"
+    },
+    "4": {
+      "language": "typescript",
+      "code": "const feedback = await lb.request<unknown>({\n  path: \"/1/feedback/user/alice/get-feedback\",\n  query: { score: 1, count: 10 },\n});"
+    },
+    "5": {
+      "language": "typescript",
+      "code": "const metadata = await lb.request<unknown>({\n  path: `/1/recording/${encodeURIComponent(recordingMbid)}`,\n});"
+    },
+    "6": {
+      "language": "typescript",
+      "code": "const feed = await lb.request<unknown>({\n  path: \"/1/user/alice/feed/events\",\n  query: { count: 10 },\n});"
+    },
+    "7": {
+      "language": "typescript",
+      "code": "const recs = await lb.request<unknown>({\n  path: \"/1/cf/recommendation/user/alice/recording\",\n  query: { count: 10 },\n});"
+    },
+    "8": {
+      "language": "typescript",
+      "code": "const exports = await lb.request<unknown>({ path: \"/1/export/list\" });\nconsole.log(exports);"
+    },
+    "9": {
+      "language": "typescript",
+      "code": "const grid = await lb.request<unknown>({ path: \"/1/art/grid/\" });\nconsole.log(grid);"
+    },
+    "10": {
+      "language": "typescript",
+      "code": "const popular = await lb.getPopularRecordings(10);\nconsole.log(popular.payload);"
+    },
+    "11": {
+      "language": "typescript",
+      "code": "const events = await lb.request<unknown>({\n  path: \"/1/user/alice/feed/events\",\n  query: { count: 20 },\n});"
+    },
+    "12": {
+      "language": "typescript",
+      "code": "const recommendations = await lb.getRecommendedRecordings(\"alice\", { count: 10 });\nconsole.log(recommendations.payload.mbids);"
+    },
+    "13": {
+      "language": "typescript",
+      "code": "const status = await lb.request<unknown>({ path: \"/1/status/service-status\" });\nconst fresh = await lb.getFreshReleases(14);"
+    },
+    "14": {
+      "language": "typescript",
+      "code": "const validation = await lb.request<unknown>({\n  path: \"/1/validate-token\",\n  token: process.env.LISTENBRAINZ_TOKEN,\n});"
+    }
+  }
+}

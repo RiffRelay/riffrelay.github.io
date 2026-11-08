@@ -1,0 +1,802 @@
+{
+  "localeName": "Español",
+  "header": {
+    "home": "Inicio",
+    "docs": "Documentos API",
+    "apiDocs": "Documentos API",
+    "apiOverview": "Descripción general de la API",
+    "apiGuides": "guías API",
+    "botDocs": "Documentos de bots",
+    "commandCatalog": "Catálogo de comandos",
+    "botGuide": "guía de robots",
+    "repo": "Fuente del bot",
+    "language": "Idioma",
+    "navigation": "Navegación principal",
+    "switchToKorean": "한국어",
+    "switchToEnglish": "ingles",
+    "menu": "Abrir navegación",
+    "close": "Cerrar navegación",
+    "skip": "Saltar al contenido"
+  },
+  "hero": {
+    "eyebrow": "TU HISTORIA DE ESCUCHARAINZ, EN DISCORDANCIA",
+    "headline": "Lleva tu historial de ListenBrainz a Discord.",
+    "body": "RiffRelay lleva tu historial de escucha de ListenBrainz a tu servidor Discord, con comandos de barra diagonal y prefijo para la música que te gusta.",
+    "primary": "Explora los comandos",
+    "secondary": "Lea los documentos de la API",
+    "previewLabel": "Un mensaje, no un reproductor de música.",
+    "sampleLabel": "Vista previa ilustrativa de Discord · no es un servidor en vivo",
+    "user": "kmmiio99o",
+    "bot": "RiffRelay",
+    "appBadge": "APLICACIÓN",
+    "role": "OYENTE",
+    "channel": "sala de musica",
+    "channelTopic": "comparte lo que está sonando",
+    "prefixCommand": "!np",
+    "timestamp": "21:33",
+    "listening": "kmmiio99o está escuchando",
+    "track": "Luka Rosi - A Ty bądź (En Vivo - Remix)",
+    "artist": "por Luka Rosi",
+    "actionsLabel": "Iconos ilustrativos de acción de pista",
+    "discord": "VISTA PREVIA DEL MENSAJE DE DISCORD"
+  },
+  "home": {
+    "trustBody": "Independiente y no oficial. RiffRelay utiliza datos de ListenBrainz; no está afiliado a ListenBrainz o MusicBrainz.",
+    "featuresEyebrow": "HECHO PARA LA GENTE DE LA MÚSICA",
+    "featuresTitle": "Tu escucha, justo donde está la conversación.",
+    "featuresBody": "Un conjunto de herramientas enfocado para registrarse, explorar su historial de escucha y compartir las pistas importantes.",
+    "featureListeningTitle": "que esta jugando",
+    "featureListeningBody": "Solicite la pista ListenBrainz actual de una cuenta vinculada, con un respaldo de escucha reciente si el punto final en vivo falla.",
+    "featureStatsTitle": "Estadísticas de escucha",
+    "featureStatsBody": "Explore los mejores artistas, álbumes, grabaciones y rangos de tiempo a partir de las estadísticas de ListenBrainz.",
+    "featureExploreTitle": "Explora y compara",
+    "featureExploreBody": "Busque música, descubra nuevos lanzamientos y compare sus gustos musicales con los de otro miembro del servidor.",
+    "commandsEyebrow": "UN MANDO PARA CADA CAJA",
+    "commandsTitle": "Historia de la música, en unas pocas teclas.",
+    "commandsBody": "El bot registra comandos de barra diagonal y también acepta un prefijo de texto configurable (predeterminado:!).",
+    "commandNow": "Mostrar pista actual o más reciente",
+    "commandStats": "Ver las principales estadísticas de escucha",
+    "commandCompare": "Comparar el gusto del artista",
+    "commandExplore": "Buscar metadatos musicales",
+    "commandFooter": "40 comandos · barra diagonal y entrada de prefijo; la entrada del token permanece en un modal privado",
+    "commandBoardTitle": "RIFFRELAY / COMANDOS",
+    "commandCount": "40",
+    "stepsEyebrow": "EN FUNCIONAMIENTO",
+    "stepsTitle": "Tres pasos desde iniciar sesión hasta escuchar.",
+    "step1Title": "Invitar a RiffRelay",
+    "step1Body": "Agregue el bot a su servidor Discord con los permisos que necesita para responder comandos.",
+    "step2Title": "Enlace EscucharBrainz",
+    "step2Body": "Comience con /login o !login, luego ingrese su token de usuario de ListenBrainz en el modo privado de Discord.",
+    "step3Title": "Elige un comando",
+    "step3Body": "Pruebe /nowplaying, /recent o /topartists. Los comandos de prefijo también están disponibles, excepto iniciar sesión.",
+    "apiEyebrow": "CONSTRUIDO SOBRE DATOS DE ESCUCHA ABIERTA",
+    "apiTitle": "Un cliente API escrito, documentado desde la fuente.",
+    "apiBody": "Explore guías prácticas de la API de ListenBrainz, formas de respuesta reales, opciones de solicitud, reintentos y los puntos finales incluidos en el cliente JavaScript.",
+    "apiAction": "Explorar la documentación de la API",
+    "apiNote": "Los ejemplos apuntan a listeningbrainz-api 0.3.0. La API Live ListenBrainz sigue teniendo autoridad.",
+    "apiCode": "import { ListenBrainzClient, type Listen } from \"listenbrainz-api\";\n\nconst lb = new ListenBrainzClient({\n  userAgent: \"RiffRelayExample/1.0 (https://example.com)\",\n});\nconst response = await lb.getPlayingNow(\"alice\");\nconst current: Listen | undefined = response.payload.listens[0];\nif (current) console.log(current.track_metadata.track_name);",
+    "apiCodeFile": "listenbrainz.ts",
+    "footerNote": "Un compañero de Discord independiente y no oficial para ListenBrainz.",
+    "footerMade": "Creado para personas que aman su historial auditivo.",
+    "footerBrand": "RiffRelay",
+    "footerDocs": "Documentación",
+    "footerGithub": "GitHub",
+    "footerListenBrainz": "EscucharBrainz",
+    "footerBotRepo": "Robot RiffRelay",
+    "footerApiRepo": "escuchabrainz-api",
+    "footerBrandRepo": "Activos de la marca RiffRelay",
+    "footerAttribution": "No está afiliado ni respaldado por ListenBrainz o MusicBrainz.",
+    "scrollLabel": "Desplázate para descubrir",
+    "external": "Se abre en una nueva pestaña"
+  },
+  "docsShell": {
+    "eyebrow": "ESCUCHARAINZ API + RIFFRELAY",
+    "title": "Documentación para la capa de escucha.",
+    "intro": "Guías prácticas basadas en el cliente API y la fuente del bot de Discord. Confirme el cambio de detalles del punto final con los documentos oficiales de ListenBrainz.",
+    "searchLabel": "Buscar documentación",
+    "searchPlaceholder": "Rutas de búsqueda, métodos, errores…",
+    "allPages": "Todas las guías",
+    "noResults": "Ninguna página coincide con esa búsqueda.",
+    "contents": "En esta pagina",
+    "source": "Referencia fuente",
+    "updated": "Basado en la fuente del bot listeningbrainz-api 0.3.0 y RiffRelay.",
+    "backHome": "Volver a RiffRelay",
+    "next": "Siguiente guía",
+    "previous": "guía anterior",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyCode": "Ejemplo de código de copia",
+    "searchShortcut": "Presione / para buscar",
+    "results": "guías coincidentes",
+    "languageLabel": "mecanografiado",
+    "officialReference": "Referencia oficial de la API de ListenBrainz",
+    "apiEyebrow": "CLIENTE API DE ESCUCHARAINZ",
+    "apiTitle": "Documentación de la API de ListenBrainz.",
+    "apiIntro": "Guías de cliente de JavaScript escritas según el paquete publicado y su fuente actual. Consulte la referencia oficial de API para conocer el comportamiento del servicio en vivo.",
+    "botEyebrow": "BOT DE DISCORD DE RIFFRELAY",
+    "botTitle": "Documentación de robots.",
+    "botIntro": "Explore el catálogo de comandos actual y las guías prácticas para vincular su cuenta ListenBrainz y usar RiffRelay en Discord.",
+    "apiGuides": "guías API",
+    "botGuides": "guías de robots",
+    "botCategory": "Referencia de bot",
+    "commandCatalogTitle": "Catálogo de comandos",
+    "commandCatalogSummary": "Generado a partir de los metadatos de comando registrados del bot: nombres, descripciones, alias, argumentos y restricciones de comando.",
+    "generatedNote": "Esta lista se genera a partir del registro de comandos de RiffRelayBot. Las guías explicativas cubren comportamientos que no se pueden inferir únicamente a partir de los metadatos de los comandos.",
+    "catalogCommands": "comandos",
+    "aliases": "Alias",
+    "usage": "Uso de texto",
+    "examples": "Ejemplos",
+    "required": "requerido",
+    "optional": "opcional",
+    "guildOnly": "Sólo servidor",
+    "slashOnly": "Sólo barra",
+    "deferred": "Diferido para comandos de barra diagonal",
+    "hidden": "Oculto de la ayuda",
+    "prefixAndSlash": "Prefijo y barra"
+  },
+  "sourcePaths": {
+    "overview": "README.md",
+    "quickstart": "src/client/base.ts",
+    "listens": "src/client/listens.ts",
+    "statistics": "src/client/stats.ts",
+    "writes": "src/client/submission.ts",
+    "metadata": "src/client/metadata.ts",
+    "discovery": "src/client/explore.ts",
+    "errors": "src/http/response.ts",
+    "bot-commands": "src/commands/index.ts",
+    "routes": "docs/api/index.md"
+  },
+  "docs": [
+    {
+      "id": "overview",
+      "title": "Descripción general",
+      "summary": "Qué son el cliente API y RiffRelay y cómo están organizados los documentos.",
+      "category": "Empieza aquí",
+      "sections": [
+        {
+          "heading": "Una API de historia musical, preparada para TypeScript",
+          "body": "ListenBrainz recopila el historial de escucha (escucha), expone estadísticas personales y de todo el sitio, acepta envíos y comentarios y proporciona metadatos y rutas de descubrimiento. El paquete listeningbrainz-api es un cliente JavaScript escrito con métodos convenientes para puntos finales comunes y una trampilla de escape de solicitudes genérica."
+        },
+        {
+          "heading": "¿Qué hace RiffRelay?",
+          "body": "RiffRelay es un bot no oficial de Discord que permite a los miembros consultar cuentas vinculadas de ListenBrainz, explorar estadísticas de escucha y metadatos musicales, comparar gustos y enviar acciones compatibles. Utiliza comandos de barra diagonal y prefijo. El inicio de sesión puede comenzar de cualquier manera; el token de usuario se ingresa en un modal de Discord en lugar de en el texto del comando."
+        },
+        {
+          "heading": "La fuente de la verdad",
+          "body": "Los ejemplos aquí se basan en la implementación adyacente de listeningbrainz-api y la fuente del bot RiffRelay. ListenBrainz cambia de forma independiente, por lo que los nombres y esquemas de los puntos finales en la API en vivo pueden evolucionar. La documentación oficial de la API tiene autoridad para el comportamiento del servidor."
+        },
+        {
+          "heading": "Guías",
+          "body": "Comience con Inicio rápido, luego use Escuchas, Estadísticas, Escrituras, Metadatos y Descubrimiento para obtener detalles del método. Errores explica el comportamiento de reintento y falla; Rutas sin procesar cataloga familias de rutas; Los comandos de bot describen el comportamiento de los comandos visibles para el usuario."
+        }
+      ]
+    },
+    {
+      "id": "quickstart",
+      "title": "Inicio rápido",
+      "summary": "Instale el cliente, configure un User-Agent honesto y realice su primera solicitud.",
+      "category": "Empieza aquí",
+      "sections": [
+        {
+          "heading": "Instalar",
+          "body": "El cliente no tiene dependencias de tiempo de ejecución y admite Node.js 18+, Bun, Deno y tiempos de ejecución con recuperación. Instale el paquete con su administrador de paquetes.",
+          "code": "bun add listenbrainz-api"
+        },
+        {
+          "heading": "crear un cliente",
+          "body": "Establezca un User-Agent descriptivo. Un token es opcional para lecturas públicas; se convierte en el token de autorización predeterminado. Nunca imprima tokens ni los coloque en una URL.",
+          "code": "import { ListenBrainzClient } from \"listenbrainz-api\";\n\nconst lb = new ListenBrainzClient({\n  userAgent: \"MyApp/1.0 (https://example.com)\",\n  token: process.env.LISTENBRAINZ_TOKEN,\n});\n\nconst response = await lb.getListens(\"username\", { count: 10 });\nconsole.log(response.payload.listens);"
+        },
+        {
+          "heading": "Configuración y valores predeterminados",
+          "body": "Las opciones del cliente son baseUrl, token y userAgent. baseUrl tiene como valor predeterminado https://api.listenbrainz.org y se le ha eliminado una barra diagonal. El User-Agent predeterminado de la fuente actual es listeningbrainz-api/0.2.1 a pesar de la versión 0.3.0 del paquete; proporcione su propia aplicación de contacto User-Agent."
+        },
+        {
+          "heading": "Autenticación",
+          "body": "Solicitudes con token de envío Autorización: Token <token>. Los tokens por solicitud anulan el valor predeterminado del cliente. Los métodos de escritura requieren un argumento token explícito. validarToken comprueba un token y devuelve {válido, nombre_usuario?, código, mensaje}; Los tokens no autorizados o no válidos deben manejarse sin registrar el secreto."
+        },
+        {
+          "heading": "Rutas personalizadas",
+          "body": "Utilice request<T> para un punto final que no esté incluido en un método conveniente. Las rutas se adjuntan a baseUrl; los valores de consulta que no están definidos o son nulos se omiten y otros valores se codifican como parámetros de búsqueda de URL.",
+          "code": "const result = await lb.request<{ payload: { count: number } }>({\n  method: \"GET\",\n  path: `/1/user/${encodeURIComponent(\"username\")}/listen-count`,\n  query: { range: \"all_time\", extra_info: 1 },\n});"
+        }
+      ]
+    },
+    {
+      "id": "listens",
+      "title": "Escucha y actividad",
+      "summary": "Lea las escuchas recientes, la reproducción en curso, las transmisiones y la actividad de escucha.",
+      "category": "leer datos",
+      "sections": [
+        {
+          "heading": "Escuchas recientes",
+          "body": "getListens(usuario, opciones) llama a /1/usuario/{usuario}/listens y devuelve una respuesta con payload.listens. Los nombres de usuario están codificados en URL. Las opciones son count, maxTs, minTs y musicBrainzMetadata. La biblioteca no elige un recuento predeterminado: cuando se omite el recuento, se aplica el valor predeterminado de la API ListenBrainz.",
+          "code": "const response = await lb.getListens(\"alice\", {\n  count: 20,\n  maxTs: Math.floor(Date.now() / 1000),\n  musicBrainzMetadata: true,\n});\n\nfor (const listen of response.payload.listens) {\n  console.log(listen.track_metadata.artist_name, listen.track_metadata.track_name);\n}"
+        },
+        {
+          "heading": "Paginación y marcas de tiempo.",
+          "body": "Utilice maxTs para buscar escuchas más antiguas o minTs para consultar escuchas más nuevas. No envíes ambos juntos. Las marcas de tiempo son segundos de Unix. El enriquecimiento de metadatos puede agregar identificadores de MusicBrainz, pero es posible que aún no haya datos coincidentes. Utilice los puntos finales de exportación para descargas del historial completo en lugar de paginación ilimitada."
+        },
+        {
+          "heading": "Jugando actualmente",
+          "body": "getPlayingNow(usuario) llama a /1/usuario/{usuario}/playing-now con metadatos=1. El resultado es { carga útil: { contar, escucha } }; el recuento puede ser cero. Un elemento que se está reproduciendo ahora puede omitir listening_at porque la reproducción aún no se ha enviado como escucha.",
+          "code": "const now = await lb.getPlayingNow(\"alice\");\nconst current = now.payload.listens[0];\nif (current) {\n  console.log(current.track_metadata.track_name);\n}"
+        },
+        {
+          "heading": "Otros métodos de actividad",
+          "body": "getListenCount devuelve el recuento numérico directamente. getFeed(usuario, {count, maxTs }) devuelve la actividad del usuario. getLatestImport devuelve payload.latest_import o nulo. getLatestActivity acepta T anteriores. getListeningActivity acepta fromTs/toTs y devuelve intervalos de tiempo con from_ts, to_ts, time_range y listening_count. getSimilarUsers devuelve nombres de usuarios y fracciones de similitud de 0 a 1."
+        },
+        {
+          "heading": "Comportamiento de reproducción actual de RiffRelay",
+          "body": "El comando de barra diagonal /nowplaying del bot utiliza de forma predeterminada la cuenta vinculada de la persona que llama y acepta un usuario de Discord opcional. Los formularios de prefijo !nowplaying, !np y !now están disponibles; Estos alias no están registrados como comandos de barra diagonal. El bot solicita el punto final de reproducción en vivo ahora. Solo cuando se produce esa solicitud, recupera la escucha más reciente y etiqueta el resultado como la última reproducción. Una respuesta vacía y exitosa indica que la cuenta no está escuchando en este momento. El recuento de reproducciones y la portada son adiciones de mejor esfuerzo."
+        }
+      ]
+    },
+    {
+      "id": "statistics",
+      "title": "Estadísticas",
+      "summary": "Consulta estadísticas de escucha del usuario y de todo el sitio con rangos y compensaciones admitidos.",
+      "category": "leer datos",
+      "sections": [
+        {
+          "heading": "Métodos de estadísticas",
+          "body": "El cliente expone getArtistStats, getAlbumStats, getReleaseStats, getTrackStats, getRecordingStats, getTagStats y getStats genéricos (usuario, entidad, opciones). StatsEntity son artistas, álbumes, lanzamientos, pistas, grabaciones o etiquetas. getSitewideStats(entidad, opciones) utiliza la ruta de todo el sitio."
+        },
+        {
+          "heading": "Rangos y paginación",
+          "body": "StatsQueryOptions son rango, recuento y desplazamiento. Los rangos admitidos en las definiciones de tipo son hoy, ayer, esta_semana, este_mes, este_año, semana, mes, año y todo el tiempo. Los métodos no agregan valores predeterminados de recuento/compensación; los valores de consulta omitidos se dejan a la API. Los metadatos de la carga útil de respuesta pueden incluir total_count, from_ts, to_ts, offset, range y last_updated."
+        },
+        {
+          "heading": "Leyendo filas",
+          "body": "Las filas son específicas de la entidad y pueden contener MBID opcionales o campos de portada. La carga útil de respuesta es intencionalmente flexible; No asuma que existe un identificador, un campo de ilustración o todas las propiedades opcionales. Los prácticos ayudantes getArtistCount y getReleaseCount devuelven totales de catálogo distintos de todos los tiempos, no totales de escucha.",
+          "code": "const response = await lb.getArtistStats(\"alice\", {\n  range: \"all_time\", count: 10, offset: 0,\n});\nconst top = response.payload.artists;\nconst distinctArtists = await lb.getArtistCount(\"alice\");"
+        },
+        {
+          "heading": "Rangos de comando de bot",
+          "body": "RiffRelay tiene atajos de períodos de escucha específicos como /semanal, /mensual, /anual, /ayer y /general, además de /top con un período y opciones de entidad. El analizador de comandos acepta alias como 7 días/semana, 30 días/mes, 365 días/año y todo/total/de por vida. Los comandos dependen de los campos de carga útil de las estadísticas y no deben interpretarse como una promesa de un historial completo."
+        },
+        {
+          "heading": "comparando gustos",
+          "body": "La comparación de gustos de RiffRelay obtiene la lista de artistas de todos los tiempos de cada cuenta y compara los identificadores de artistas de MusicBrainz cuando es posible; Los nombres normalizados son una alternativa cuando faltan identificadores. Los resultados dependen de la muestra de los mejores artistas obtenida y no son una puntuación de similitud del catálogo completo."
+        }
+      ]
+    },
+    {
+      "id": "writes",
+      "title": "Escritura y seguridad de la cuenta.",
+      "summary": "Envíe escuchas, comentarios, pines y eliminaciones utilizando tokens de usuario explícitos.",
+      "category": "Escribir datos",
+      "sections": [
+        {
+          "heading": "Autorización de escritura",
+          "body": "Las llamadas de escritura envían el token proporcionado explícitamente en el encabezado de Autorización. Valide las credenciales antes de almacenarlas. El comando de inicio de sesión de RiffRelay abre un modo de Discord para la entrada del token, lo valida, luego lo cifra y lo guarda; el token no es un argumento en el mensaje de comando público."
+        },
+        {
+          "heading": "enviar escucha",
+          "body": "createTrackMetadata, createListen y createNowPlaying construyen cargas útiles omitiendo propiedades opcionales no definidas. submitListen envía una escucha, submitNowPlaying envía una actualización de playing_now y submitImport envía un lote. ¿Todos devuelven {estado, recuento, error? }. listeningAt son segundos de Unix. Envíe solo después del umbral de scrobble de ListenBrainz: al menos la mitad de la pista o cuatro minutos, lo que ocurra primero.",
+          "code": "import { createListen } from \"listenbrainz-api\";\n\nawait lb.submitListen(token, createListen({\n  artistName: \"Daft Punk\",\n  trackName: \"One More Time\",\n  listenedAt: Math.floor(Date.now() / 1000),\n}));"
+        },
+        {
+          "heading": "Comentarios y pines",
+          "body": "submitFeedback(token, { RecordingMsid, Score }) acepta 1, -1 o 0. El comando love de RiffRelay envía 1; unlove envía -1 (y también tiene alias de odio/aversión). eliminar comentarios envía puntuación 0. pin acepta grabaciónMsid y una propaganda opcional; Desanclar elimina el pin actual. Las lecturas públicas como getFeedback y getUserPins no requieren un token, pero los cambios requieren el token del propietario de la cuenta."
+        },
+        {
+          "heading": "Registro de identificaciones y datos faltantes",
+          "body": "La retroalimentación y los pines funcionan al grabar MSID, que no son lo mismo que los MBID de grabación de MusicBrainz. Es posible que un elemento que se esté reproduciendo actualmente no tenga un Recording_msid. Las acciones love, pin y relacionadas de RiffRelay requieren un identificador de grabación actual utilizable; cuando está ausente no se puede presentar la operación."
+        },
+        {
+          "heading": "Eliminar una escucha",
+          "body": "deleteListen(token, { listeningAt, RecordingMsid }) envía una solicitud de eliminación para esa escucha exacta. Proporcione la marca de tiempo y el MSID de grabación de un registro de escucha enviado. Esta no es la misma operación que eliminar un estado que se está reproduciendo."
+        },
+        {
+          "heading": "Envíos en reproducción e importación",
+          "body": "createNowPlaying crea metadatos sin listeningAt; submitNowPlaying lo envía como una actualización de playing_now. submitImport acepta una serie de cargas útiles de envío para un lote. createNowPlaying y createListen mediaPlayer predeterminado para BrainzBot a menos que proporciones uno.",
+          "code": "import { createNowPlaying } from \"listenbrainz-api\";\n\nawait lb.submitNowPlaying(token, createNowPlaying({\n  artistName: \"Daft Punk\",\n  trackName: \"One More Time\",\n  durationMs: 320_000,\n}));"
+        },
+        {
+          "heading": "Proteger tokens de usuario",
+          "body": "RiffRelay almacena tokens ListenBrainz vinculados cifrados con AES-256-GCM. La clave de cifrado de implementación debe permanecer secreta y tener una copia de seguridad; perderlo significa que los tokens almacenados no se pueden recuperar y los usuarios deben vincularse nuevamente. Ofuscar un paquete de bot compilado no es un límite de seguridad."
+        }
+      ]
+    },
+    {
+      "id": "metadata",
+      "title": "Metadatos y músicaBrainz",
+      "summary": "Resuelva pistas en MusicBrainz, obtenga metadatos de ListenBrainz y busque entidades.",
+      "category": "Descubrir",
+      "sections": [
+        {
+          "heading": "Resolver una pista",
+          "body": "lookupTrackMetadata toma el nombre del artista y el nombre de la grabación, con un nombre de lanzamiento y una duración opcionales (milisegundos). Llama a la ruta de búsqueda de metadatos de ListenBrainz. La respuesta puede contener identificadores de grabación, publicación y archivo de arte de portada; No se garantiza una coincidencia.",
+          "code": "const match = await lb.lookupTrackMetadata({\n  artistName: \"Radiohead\",\n  recordingName: \"Paranoid Android\",\n});\nif (match.recording_mbid) {\n  const detail = await lb.getRecordingMetadata(match.recording_mbid);\n  console.log(detail.title);\n}"
+        },
+        {
+          "heading": "Captadores de metadatos de ListenBrainz",
+          "body": "getRecordingMetadata, getArtistMetadata, getAlbumMetadata y getReleaseGroupMetadata aceptan un ID de MusicBrainz y devuelven respuestas de metadatos de ListenBrainz. Estas no son las cargas útiles de la entidad del servicio web MusicBrainz sin procesar."
+        },
+        {
+          "heading": "MúsicaBrainzCliente",
+          "body": "Utilice MusicBrainzClient para búsqueda de texto y registros detallados de entidades de MusicBrainz. Los métodos de búsqueda cubren artistas, grabaciones, lanzamientos y grupos de lanzamientos, y devuelven arreglos (límite predeterminado 5). Los métodos de búsqueda aceptan un MBID; lookupRelease incluye sus grabaciones. getArtistTopTags fusiona etiquetas de artistas y géneros, elimina nombres duplicados, ordena por recuento y devuelve {nombre, recuento} elementos."
+        },
+        {
+          "heading": "Buscar, luego buscar una entidad",
+          "body": "Una búsqueda de texto devuelve candidatos en lugar de un registro de entidad canónica. Seleccione un ID de resultado antes de llamar a su método de búsqueda.",
+          "code": "import { MusicBrainzClient } from \"listenbrainz-api\";\n\nconst mb = new MusicBrainzClient({\n  userAgent: \"MyApp/1.0 (https://example.com)\",\n});\nconst matches = await mb.searchRecording(\"Paranoid Android\", 5);\nconst detail = matches[0]\n  ? await mb.lookupRecording(matches[0].id)\n  : undefined;"
+        },
+        {
+          "heading": "Límites de velocidad y forma de carga útil",
+          "body": "MusicBrainz requiere un agente de usuario descriptivo y contactable y limita a los clientes a una solicitud por segundo. Un único MusicBrainzClient comparte su acelerador; utilice una instancia y espere solicitudes secuenciales. Los campos de MusicBrainz usan nombres como crédito de artista y fecha de primer lanzamiento, a diferencia de los campos Snake_case de ListenBrainz."
+        },
+        {
+          "heading": "URL de ilustraciones",
+          "body": "coverArtUrl y los asistentes de URL MusicBrainz/ListenBrainz devuelven URL canónicas; no recuperan ni validan ilustraciones remotas. Es posible que la obra de arte no esté disponible incluso cuando la búsqueda de metadatos se realice correctamente."
+        }
+      ]
+    },
+    {
+      "id": "discovery",
+      "title": "Descubrimiento y recomendaciones",
+      "summary": "Obtenga música popular, nuevos lanzamientos, recomendaciones y señales de similitud.",
+      "category": "Descubrir",
+      "sections": [
+        {
+          "heading": "Explorar puntos finales",
+          "body": "getPopularArtists, getPopularRecordings, getPopularReleases y getPopularReleaseGroups aceptan cada uno un recuento opcional cuyo valor predeterminado es 25 en el cliente. getFreshReleases(days) tiene un valor predeterminado de 30 días. Cada método devuelve la respuesta del punto final; inspeccione la carga útil documentada en lugar de asumir que todos los puntos finales comparten una forma de respuesta."
+        },
+        {
+          "heading": "Recomendaciones",
+          "body": "getRecommendedRecordings(usuario, {count}) solicita recomendaciones de grabación de filtrado colaborativo; la respuesta expone la grabación de MBID en payload.mbids. La opción de recuento no tiene ningún valor predeterminado proporcionado por el cliente. getRecommendationStatus informa el estado y puede no incluir una carga útil de resultados hasta que la generación esté lista."
+        },
+        {
+          "heading": "Usuarios relacionados",
+          "body": "getSimilarUsers(user, { count }) devuelve entradas con nombre_usuario y una fracción de similitud entre 0 y 1. Trate esa puntuación como una señal de servicio, no como una medida definitiva del gusto compartido."
+        },
+        {
+          "heading": "Explorar en RiffRelay",
+          "body": "El bot incluye comandos de detalles de artista, álbum y pista, búsqueda, exploración basada en el estado de ánimo y nuevos lanzamientos. Las respuestas dependen de la disponibilidad de metadatos de ListenBrainz y MusicBrainz y pueden omitir ilustraciones o identificadores."
+        },
+        {
+          "heading": "Cuando los resultados están vacíos",
+          "body": "Una lista vacía es un resultado válido para resultados que no son elegibles, un historial de usuario no disponible o recomendaciones que no están listas. Verifique el estado de la respuesta y los documentos API oficiales actuales antes de tratar una carga útil vacía como un error."
+        }
+      ]
+    },
+    {
+      "id": "errors",
+      "title": "Errores, reintentos y límites",
+      "summary": "Comprenda los errores de API escritos, las reglas de reintento, los tiempos de espera y los casos extremos de decodificación.",
+      "category": "Referencia",
+      "sections": [
+        {
+          "heading": "EscucharBrainzError",
+          "body": "Los errores de API arrojan ListenBrainzError con estado, mensaje, ruta, método, cuerpo analizado e isRateLimit. Los errores a nivel de red utilizan el estado 0. ListenBrainzTimeoutError es el subtipo de tiempo de espera. ListenBrainzError.isInstance(error) es un tipo de protección para bloques catch."
+        },
+        {
+          "heading": "Reintentos",
+          "body": "La capa HTTP reintenta las respuestas HTTP 429 y los errores del servidor 5xx dos veces después de la solicitud original (tres intentos en total). Si un encabezado 429 Retry-After contiene un número entero de segundos, se utiliza esa duración. De lo contrario, los retrasos utilizan 250 ms × 2 ^ intento. No agregue ciclos de reintento externos agresivos sin considerar los límites de velocidad."
+        },
+        {
+          "heading": "Tiempos de espera y controles de salud",
+          "body": "Un tiempo de espera de solicitud genera ListenBrainzTimeoutError. El tiempo de espera predeterminado por solicitud es de 15 000 ms y el valor predeterminado de reintentos es 2; las personas que llaman pueden anular ambos. getServiceStatus devuelve métricas detalladas. isHealthy es intencionalmente diferente: detecta errores en las solicitudes y devuelve falso."
+        },
+        {
+          "heading": "Advertencia de decodificación de respuesta",
+          "body": "El descodificador HTTP actual analiza el texto de respuesta como JSON. Si el análisis falla, establece el valor decodificado en nulo; Por lo tanto, las respuestas exitosas que no son JSON se resuelven en conversión nula como el tipo solicitado. Para las respuestas fallidas, se utiliza un mensaje analizado cuando esté disponible; de ​​lo contrario, se informa statusText o una reserva de estado HTTP. ListenBrainzParseError existe como una clase exportada pero el decodificador actual no lo genera."
+        },
+        {
+          "heading": "Lista de verificación de solución de problemas",
+          "body": "Verifique el estado y la ruta en ListenBrainzError, confirme que su token se envíe en el encabezado de autorización, verifique el nombre de usuario y los parámetros de solicitud, y respete las respuestas 429. Un campo faltante o un resultado artístico suelen ser datos opcionales, no un error de transporte."
+        }
+      ]
+    },
+    {
+      "id": "bot-commands",
+      "title": "Comandos de RiffRelay",
+      "summary": "Comportamiento del comando y sintaxis de entrada verificados con el registro del bot.",
+      "category": "Robot RiffRelay",
+      "sections": [
+        {
+          "heading": "Dos formas de preguntar",
+          "body": "Cada comando se registra una vez y admite un formulario de comando de barra diagonal de Discord y un formulario de prefijo. El prefijo predeterminado es! y los administradores del servidor pueden cambiarlo con setprefix. Los argumentos de prefijo admiten entradas posicionales y indicadores --option / --option=value. el inicio de sesión puede comenzar como un comando de barra diagonal o prefijo; su botón abre un modal de Discord, por lo que el token no es un argumento de comando."
+        },
+        {
+          "heading": "Pista actual",
+          "body": "/nowplaying [usuario] comprueba la cuenta vinculada seleccionada. Los formularios de prefijo !nowplaying, !np y !now están disponibles; Los alias de prefijo no son comandos de barra diagonal. Si ListenBrainz devuelve un elemento que se está reproduciendo actualmente, la inserción lo etiqueta como escuchando ahora. Si se produce la solicitud de reproducción ahora, el bot intenta la escucha más reciente y etiqueta la última reproducción. Una respuesta en vivo vacía no desencadena un retroceso del historial."
+        },
+        {
+          "heading": "Opciones y valores predeterminados comunes",
+          "body": "/nowplaying tiene una opción de usuario opcional y de forma predeterminada es la persona que llama. /reciente acepta un usuario y un recuento opcionales; su recuento predeterminado es 10 y tiene un límite de 25. Los alias de prefijo son históricos y recientes. /top acepta entidad, usuario, período y recuento; el valor predeterminado son los artistas, la persona que llama, el rango de todos los tiempos y 10 resultados, con un recuento máximo de 15. Los nombres de barra diagonal son nombres de comandos canónicos; Los alias son para la entrada de prefijos."
+        },
+        {
+          "heading": "Familias de comandos",
+          "body": "Cuenta: iniciar sesión, cerrar sesión, yo. Escuchando: en reproducción, reciente, feed, quién, gráfico, racha. Estadísticas: top, topartists, topalbums, toptracks, toprecordings, ayer, semanal, mensual, anual, en general, reproducciones. Explorar: artista, álbum, pista, búsqueda, estado de ánimo, novedad. Social: similar, gusto. Scrobbling: scrobble, amar, desamor, amado, fijar, desanclar, fijar. Las utilidades generales incluyen ayuda, ping, invitación, bot y setprefix."
+        },
+        {
+          "heading": "Información opcional",
+          "body": "La portada, los enlaces de MusicBrainz y los recuentos de reproducciones se pueden mostrar cuando los metadatos de origen y las solicitudes de API los proporcionen. En /nowplaying, el artista/que registra las estadísticas de todos los tiempos y las solicitudes de obras de arte son el mejor esfuerzo; sus fracasos no impiden la respuesta de la vía central."
+        },
+        {
+          "heading": "Vinculando de forma segura",
+          "body": "Los usuarios vinculan su propia cuenta de ListenBrainz con /login o !login, luego ingresan el token en el modo privado. Nunca pegues el token en un chat público ni lo compartas con otro usuario. RiffRelay valida antes de almacenar y cifra los tokens almacenados."
+        }
+      ]
+    },
+    {
+      "id": "routes",
+      "title": "Índice de ruta sin procesar",
+      "summary": "Familias de rutas cubiertas por el inventario de terminales mantenido del repositorio de API.",
+      "category": "Referencia",
+      "sections": [
+        {
+          "heading": "Llamar a un punto final",
+          "body": "Utilice ListenBrainzClient.request<T> para rutas sin un método conveniente. El índice de ruta de este repositorio sigue la descripción y referencia oficial de ListenBrainz OpenAPI; es un inventario, no una garantía de esquemas actuales o un contrato de servidor completo."
+        },
+        {
+          "heading": "Core, escucha y radio",
+          "body": "Ejemplos: /1/submit-listens, /1/validate-token, /1/user/{user_name}/listens, /1/user/{user_name}/listen-count, /1/user/{user_name}/playing-now, /1/user/{user_name}/usuarios similares, /1/delete-listen, /1/latest-import, /1/status/service-status, /1/lb-radio/artista/{seed_artist_mbid}."
+        },
+        {
+          "heading": "Estadística y arte",
+          "body": "Las rutas de estadísticas incluyen /1/stats/user/{user_name}/{artistas|lanzamientos|grupos de lanzamiento|grabaciones}, actividad de escucha, oyentes de artistas/grupos de lanzamiento, clasificaciones en todo el sitio y año en la música. Las rutas de arte incluyen /1/art/grid/, cuadrículas de arte de usuario y obras de arte del año musical; Algunas respuestas artísticas son imágenes en lugar de JSON."
+        },
+        {
+          "heading": "Listas de reproducción, comentarios y redes sociales.",
+          "body": "Las rutas de la lista de reproducción cubren listado, creación, búsqueda, edición, agregar/mover/eliminar elementos, copiar y eliminar. Las rutas de grabación cubren comentarios, pines y gestión de pines. Las rutas sociales cubren feeds, eventos de la línea de tiempo, seguidores/seguidores, seguir/dejar de seguir y visibilidad de eventos de feeds."
+        },
+        {
+          "heading": "Catálogo, recomendaciones y exportaciones.",
+          "body": "Las rutas del catálogo incluyen popularidad, exploración y búsqueda de metadatos. Las familias de recomendaciones incluyen grabaciones filtradas colaborativamente y comentarios sobre recomendaciones. Las rutas diversas incluyen nuevos lanzamientos, exploración de color, información de volcado de servicios y exportaciones de historial autenticado; La creación de exportaciones puede ser asíncrona."
+        },
+        {
+          "heading": "Autenticación y cambios en vivo.",
+          "body": "Las llamadas protegidas utilizan Autorización: Token <user-token>. Siga la documentación oficial del punto final para conocer los parámetros requeridos actuales, las reglas de propiedad, la disponibilidad de rutas y los esquemas de carga útil. El nombre de una ruta por sí solo no es suficiente para determinar si una operación es pública o está autorizada."
+        },
+        {
+          "heading": "Rutas centrales y de radio",
+          "body": "/1/buscar/usuarios\n/1/enviar-escucha\n/1/validar-token\n/1/usuario/{nombre_usuario}/escucha\n/1/usuario/{nombre_usuario}/cuenta-escucha\n/1/usuario/{nombre_usuario}/jugando-ahora\n/1/usuario/{nombre_usuario}/usuarios-similares\n/1/usuario/{nombre_usuario}/similar-a/{otro_nombre_usuario}\n/1/eliminar-escuchar\n/1/última-importación\n/1/usuario/{nombre_usuario}/servicios\n/1/usuario/{playlist_user_name}/playlists/recomendaciones\n/1/usuario/{playlist_user_name}/playlists/búsqueda\n/1/lb-radio/artista/{seed_artist_mbid}\n/1/lb-radio/etiquetas\n/1/reproduciendo-ahora/eliminar\n/1/estado/estado-servicio"
+        },
+        {
+          "heading": "Rutas estadísticas",
+          "body": "/1/estadísticas/usuario/{nombre_usuario}/artistas\n/1/estadísticas/usuario/{nombre_usuario}/lanzamientos\n/1/stats/user/{user_name}/release-groups\n/1/estadísticas/usuario/{nombre_usuario}/grabaciones\n/1/stats/user/{user_name}/actividad-de-escucha\n/1/estadísticas/usuario/{nombre_usuario}/actividad-diaria\n/1/estadísticas/usuario/{nombre_usuario}/mapa-artista\n/1/estadísticas/artista/{artista_mbid}/oyentes\n/1/stats/release-group/{release_group_mbid}/oyentes\n/1/estadísticas/todo el sitio/artistas\n/1/estadísticas/todo el sitio/lanzamientos\n/1/estadísticas/todo el sitio/grupos de lanzamiento\n/1/estadísticas/todo el sitio/grabaciones\n/1/estadísticas/todo el sitio/actividad-de-escucha\n/1/estadísticas/todo el sitio/mapa-artista\n/1/estadísticas/usuario/{nombre_usuario}/año-en-la-música/{año}"
+        },
+        {
+          "heading": "Rutas de lista de reproducción",
+          "body": "/1/usuario/{playlist_user_name}/listas de reproducción\n/1/usuario/{playlist_user_name}/playlists/colaborador\n/1/usuario/{playlist_user_name}/playlists/createdfor\n/1/lista de reproducción/crear\n/1/lista de reproducción/búsqueda\n/1/lista de reproducción/editar/{playlist_mbid}\n/1/lista de reproducción/{playlist_mbid}\n/1/lista de reproducción/{playlist_mbid}/item/add/{offset}\n/1/lista de reproducción/{playlist_mbid}/item/move\n/1/lista de reproducción/{playlist_mbid}/item/delete\n/1/lista de reproducción/{playlist_mbid}/eliminar\n/1/lista de reproducción/{playlist_mbid}/copiar"
+        },
+        {
+          "heading": "Grabación de comentarios y rutas de fijación",
+          "body": "/1/comentarios/comentarios-de-grabación\n/1/comentarios/usuario/{nombre_usuario}/obtener-comentarios\n/1/comentarios/grabación/{recording_mbid}/get-feedback-mbid\n/1/comentarios/usuario/{recording_msid}/get-feedback\n/1/comentarios/usuario/{nombre_usuario}/obtener-comentarios-para-grabaciones\n/1/pin\n/1/desanclar\n/1/pin/eliminar/{row_id}\n/1/{nombre_usuario}/pins\n/1/{nombre_usuario}/pins/siguiendo\n/1/{nombre_usuario}/pins/actual\n/1/pin/actualización/{row_id}"
+        },
+        {
+          "heading": "Rutas de popularidad y metadatos",
+          "body": "/1/popularidad/mejores-grabaciones-para-artista/{artist_mbid}\n/1/popularidad/grupos-de-mejores-lanzamientos-para-artistas/{artist_mbid}\n/1/popularidad/grabación\n/1/popularidad/artista\n/1/popularidad/lanzamiento\n/1/popularidad/grupo-lanzamiento\n/1/explorar/artistas-populares\n/1/explorar/grabaciones-populares\n/1/explorar/lanzamientos-populares\n/1/explorar/grupos-de-lanzamientos-populares\n/1/metadatos/grabación/\n/1/metadatos/grupo_liberación/\n/1/metadatos/búsqueda/\n/1/metadatos/submit_manual_mapping/\n/1/metadatos/get_manual_mapping/\n/1/metadatos/artista/"
+        },
+        {
+          "heading": "Rutas sociales",
+          "body": "/1/usuario/{nombre_usuario}/timeline-event/create/recording\n/1/usuario/{nombre_usuario}/timeline-event/create/notificación\n/1/usuario/{nombre_usuario}/timeline-event/create/review\n/1/usuario/{nombre_usuario}/feed/eventos\n/1/usuario/{nombre_usuario}/feed/eventos/escucha/siguiendo\n/1/usuario/{nombre_usuario}/feed/eventos/escucha/similar\n/1/usuario/{nombre_usuario}/feed/eventos/eliminar\n/1/usuario/{nombre_usuario}/feed/eventos/ocultar\n/1/usuario/{nombre_usuario}/feed/eventos/mostrar\n/1/usuario/{nombre_usuario}/timeline-event/create/recomendar-personal\n/1/usuario/{nombre_usuario}/seguidores\n/1/usuario/{nombre_usuario}/siguiendo\n/1/usuario/{nombre_usuario}/seguir\n/1/usuario/{nombre_usuario}/dejar de seguir"
+        },
+        {
+          "heading": "Rutas de recomendación",
+          "body": "/1/cf/recomendación/usuario/{nombre_usuario}/grabación\n/1/recomendación/comentarios/enviar\n/1/recomendaciones/comentarios/eliminar\n/1/recomendaciones/comentarios/usuario/{nombre_usuario}\n/1/recomendaciones/comentarios/usuario/{nombre_usuario}/grabaciones\n/1/recomendación/cf-recording/{nombre_usuario}/arriba\n/1/recomendación/cf-grabación/{nombre_usuario}/estado"
+        },
+        {
+          "heading": "Rutas diversas y de exportación",
+          "body": "/1/explorar/nuevos lanzamientos/\n/1/explorar/color/{color}\n/1/explorar/lb-radio\n/1/estado/obtener-información-volcado\n/1/exportar/\n/1/exportar/lista\n/1/exportar/{export_id}\n/1/exportar/{export_id}/descargar\n/1/exportar/{export_id}/eliminar"
+        },
+        {
+          "heading": "Rutas de arte",
+          "body": "/1/arte/cuadrícula/\n/1/art/grid-stats/{nombre_usuario}/{rango_tiempo}/{dimensión}/{diseño}/{tamaño_imagen}\n/1/arte/{nombre_personalizado}/{nombre_usuario}/{rango_tiempo}/{tamaño_imagen}\n/1/arte/año-en-la-música/{año}/{nombre_usuario}\n\nAlgunos puntos finales artísticos devuelven imágenes en lugar de JSON."
+        }
+      ]
+    }
+  ],
+  "catalogCategories": {
+    "General": "generales",
+    "Account": "cuenta",
+    "Listening": "escuchando",
+    "Stats": "Estadísticas",
+    "Explore": "Explorar",
+    "Social": "sociales",
+    "Scrobbling": "scrobbling"
+  },
+  "sitePages": {
+    "faqLink": "Preguntas frecuentes",
+    "privacyLink": "Privacidad",
+    "faq": {
+      "eyebrow": "AYUDA / FAQ",
+      "title": "Preguntas frecuentes",
+      "intro": "Respuestas útiles sobre RiffRelay, ListenBrainz y este sitio web.",
+      "questions": [
+        { "question": "¿Qué es RiffRelay?", "answer": "RiffRelay es un bot independiente de Discord para consultar tu actividad de escucha de ListenBrainz mediante comandos. No está afiliado a ListenBrainz ni a MusicBrainz." },
+        { "question": "¿Qué necesito para usar el bot?", "answer": "Necesitas un servidor de Discord, una cuenta de ListenBrainz y un scrobbler que envíe escuchas a ListenBrainz. Vincula tu cuenta con /login; el comando abre un formulario privado para introducir tu token de ListenBrainz." },
+        { "question": "¿RiffRelay se conecta directamente a Spotify u otros reproductores?", "answer": "No. RiffRelay consulta los datos de escucha de ListenBrainz, no se conecta directamente a servicios de streaming. Conecta a tu cuenta un scrobbler compatible con ListenBrainz para enviar allí tus escuchas." },
+        { "question": "¿Por qué no aparece la canción que estoy reproduciendo?", "answer": "El bot solo puede mostrar la información que ofrece ListenBrainz. Comprueba que tu cuenta esté vinculada y reciba escuchas. Si no hay datos de reproducción en directo, puede mostrarse tu escucha más reciente." },
+        { "question": "¿Dónde puedo consultar los comandos disponibles?", "answer": "El catálogo de comandos del bot incluye descripciones y opciones. Hay comandos slash y con prefijo; /login o !login abre un formulario privado para introducir el token. Nunca lo incluyas en el texto del comando." },
+        { "question": "¿Qué es el paquete de la API de ListenBrainz?", "answer": "Es un cliente de JavaScript y TypeScript para realizar solicitudes a ListenBrainz. La documentación de la API explica la configuración, la autenticación y los métodos disponibles." },
+        { "question": "¿Cómo vinculo o actualizo mi cuenta de ListenBrainz?", "answer": "Ejecuta /login o !login en Discord y usa el botón para introducir tu token en el formulario privado. Puedes obtenerlo en https://listenbrainz.org/settings. Un token nuevo y válido actualiza la cuenta vinculada." },
+        { "question": "¿Cómo desconecto mi cuenta?", "answer": "Usa /logout o !logout. RiffRelay elimina la vinculación y el token guardado; no borra tu cuenta de ListenBrainz ni tu historial de escucha." },
+        { "question": "¿Cómo gestiona RiffRelay mi token?", "answer": "El bot valida el token con ListenBrainz y lo cifra antes de guardarlo para las funciones vinculadas a la cuenta. Introdúcelo solo en el formulario privado de Discord, nunca en un mensaje público." },
+        { "question": "¿RiffRelay registra mi música automáticamente?", "answer": "No. RiffRelay lee los datos de escucha de ListenBrainz y no se conecta a tu reproductor. El comando /scrobble puede enviar una escucha cuando lo ejecutas expresamente." },
+        { "question": "¿Dónde puedo informar de un error o pedir ayuda?", "answer": "Abre una incidencia o un debate en el proyecto RiffRelayBot de GitHub. Incluye el comando y lo ocurrido, pero nunca compartas tu token de ListenBrainz." },
+        { "question": "¿Este sitio web me rastrea?", "answer": "El sitio guarda el idioma elegido en tu navegador y no incluye código de analítica ni publicidad. La política de privacidad explica el alcance de esta información y el alojamiento." }
+      ],
+      "commandsLink": "Ver los comandos del bot",
+      "apiLink": "Leer la documentación de la API"
+    },
+    "privacy": {
+      "eyebrow": "PRIVACIDAD",
+      "title": "Política de privacidad",
+      "updated": "Última actualización: 8 de noviembre de 2026",
+      "intro": "Esta política describe el funcionamiento del sitio web de RiffRelay. No cubre el bot de Discord ni los servicios de terceros.",
+      "sections": [
+        { "heading": "Preferencia de idioma", "body": "El sitio guarda el idioma que eliges en el almacenamiento local de tu navegador con el nombre riffrelay-language para recordar tu preferencia. Esta opción permanece en tu navegador y no se envía al sitio como una solicitud de la aplicación. Puedes eliminarla borrando el almacenamiento local de este sitio en tu navegador." },
+        { "heading": "Cookies, analítica y formularios", "body": "El código del sitio no establece cookies y actualmente no incluye integraciones de analítica, publicidad, inicio de sesión ni formularios de contacto. Esto describe la propia aplicación del sitio; no determina las prácticas del proveedor de alojamiento." },
+        { "heading": "Alojamiento y enlaces externos", "body": "Como cualquier sitio web, este se entrega mediante un proveedor de alojamiento. Este puede procesar datos técnicos habituales de las solicitudes, como tu dirección IP, según sus propias prácticas. Los enlaces a GitHub, ListenBrainz y otros servicios te llevan a sus proveedores, cuyas políticas de privacidad se aplican allí." },
+        { "heading": "Bot de Discord y ListenBrainz", "body": "Esta política solo cubre el sitio web de RiffRelay. Al usar el bot de Discord intervienen Discord y ListenBrainz, y el bot puede procesar datos de cuenta y de escucha para ofrecer sus funciones. Consulta la documentación y el código fuente del bot; también se aplican las políticas propias de Discord y ListenBrainz." },
+        { "heading": "Consultas y cambios", "body": "Si tienes preguntas sobre este sitio, abre una incidencia o un debate en el proyecto RiffRelayBot de GitHub. Esta página puede actualizarse cuando cambie el funcionamiento del sitio; la fecha anterior indica la última revisión." }
+      ],
+      "projectLink": "RiffRelayBot en GitHub",
+      "homeLink": "Volver al inicio"
+    },
+    "notFound": {
+      "eyebrow": "404 / NO ENCONTRADO",
+      "title": "Esta página no está en la lista de canciones.",
+      "body": "Puede que la dirección esté desactualizada o que la página se haya movido. Vuelve al inicio o consulta una de estas guías.",
+      "homeLink": "Ir al inicio",
+      "faqLink": "Ver preguntas frecuentes",
+      "apiLink": "Documentación de la API"
+    }
+  },
+  "commandTranslations": {
+    "help": {
+      "description": "Enumere todos los comandos u obtenga ayuda para un comando específico.",
+      "options": {
+        "command": "Comando para obtener ayuda para"
+      }
+    },
+    "ping": {
+      "description": "Verifique la latencia de conexión del bot y de Discord.",
+      "options": {}
+    },
+    "invite": {
+      "description": "Obtenga un enlace de invitación para agregar BrainzBot a su servidor.",
+      "options": {}
+    },
+    "bot": {
+      "description": "Estado del bot: tiempo de actividad, usuarios vinculados, conectividad ListenBrainz.",
+      "options": {}
+    },
+    "setprefix": {
+      "description": "Cambie el prefijo de comando de texto para este servidor.",
+      "options": {
+        "prefix": "Nuevo prefijo (máximo 3 caracteres)"
+      }
+    },
+    "login": {
+      "description": "Conecte su cuenta ListenBrainz usando su token API.",
+      "options": {}
+    },
+    "logout": {
+      "description": "Desconecta tu cuenta de ListenBrainz de este bot.",
+      "options": {}
+    },
+    "me": {
+      "description": "Muestre su perfil y estadísticas vinculados de ListenBrainz.",
+      "options": {}
+    },
+    "nowplaying": {
+      "description": "Muestra lo que se está reproduciendo actualmente.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)"
+      }
+    },
+    "recent": {
+      "description": "Muestra las escuchas más recientes.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "count": "Número de escuchas (máximo 25)"
+      }
+    },
+    "feed": {
+      "description": "Muestra el feed de actividades de ListenBrainz (scrobbles, pines).",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)"
+      }
+    },
+    "who": {
+      "description": "Muestra lo que todos en tu canal de voz están escuchando.",
+      "options": {}
+    },
+    "chart": {
+      "description": "Álbumes principales organizados como una cuadrícula de emoji.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "size": "Tamaño de la cuadrícula, p. 5x5 (máximo 10)",
+        "period": "semana | mes | año | todos (por defecto todos)"
+      }
+    },
+    "streak": {
+      "description": "Cuente los días consecutivos con scrobbles (actual + más largo).",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)"
+      }
+    },
+    "top": {
+      "description": "Muestra los mejores artistas, álbumes o pistas durante un período.",
+      "options": {
+        "entity": "Qué clasificar (artistas/álbumes/pistas/grabaciones)",
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "period": "semana | mes | año | todos (por defecto todos)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "topartists": {
+      "description": "Muestra a tus mejores artistas.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "period": "semana | mes | año | todos (por defecto todos)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "topalbums": {
+      "description": "Muestra tus álbumes principales.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "period": "semana | mes | año | todos (por defecto todos)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "toptracks": {
+      "description": "Muestra tus mejores canciones.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "period": "semana | mes | año | todos (por defecto todos)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "toprecordings": {
+      "description": "Muestra tus mejores grabaciones.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "period": "semana | mes | año | todos (por defecto todos)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "yesterday": {
+      "description": "Las mejores estadísticas de ayer.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "entity": "Qué clasificar (artistas/álbumes/pistas/grabaciones)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "weekly": {
+      "description": "Las mejores estadísticas de esta semana.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "entity": "Qué clasificar (artistas/álbumes/pistas/grabaciones)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "monthly": {
+      "description": "Las mejores estadísticas de este mes.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "entity": "Qué clasificar (artistas/álbumes/pistas/grabaciones)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "yearly": {
+      "description": "Las mejores estadísticas de este año.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "entity": "Qué clasificar (artistas/álbumes/pistas/grabaciones)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "overall": {
+      "description": "Las mejores estadísticas de todos los tiempos.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "entity": "Qué clasificar (artistas/álbumes/pistas/grabaciones)",
+        "count": "Cuántos mostrar (máximo 15)"
+      }
+    },
+    "plays": {
+      "description": "Cuántas reproducciones tiene un artista (o álbum/pista).",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)",
+        "entity": "artista (predeterminado) | álbum | pista",
+        "name": "Nombre del artista/álbum/pista"
+      }
+    },
+    "artist": {
+      "description": "Busque un artista y sus estadísticas.",
+      "options": {
+        "name": "Nombre del artista",
+        "user": "Usuario de Discord para estadísticas (el valor predeterminado es usted)"
+      }
+    },
+    "album": {
+      "description": "Busque un álbum y sus obras.",
+      "options": {
+        "name": "Título del álbum",
+        "user": "Usuario de Discord para estadísticas (el valor predeterminado es usted)"
+      }
+    },
+    "track": {
+      "description": "Busque una pista y sus reproducciones.",
+      "options": {
+        "name": "Título de la pista",
+        "user": "Usuario de Discord para estadísticas (el valor predeterminado es usted)"
+      }
+    },
+    "search": {
+      "description": "Busque MusicBrainz para artistas, álbumes o pistas.",
+      "options": {
+        "type": "Que buscar",
+        "query": "Consulta de búsqueda"
+      }
+    },
+    "mood": {
+      "description": "Adivina tu estado de ánimo al escuchar las etiquetas de género.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)"
+      }
+    },
+    "fresh": {
+      "description": "Nuevos lanzamientos del último mes.",
+      "options": {
+        "days": "¿Qué tan atrás (máximo 60)"
+      }
+    },
+    "similar": {
+      "description": "Mostrar usuarios con gustos auditivos similares.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)"
+      }
+    },
+    "taste": {
+      "description": "Compara tus gustos con los de otros usuarios (los mejores artistas se superponen).",
+      "options": {
+        "user": "El otro usuario de Discord"
+      }
+    },
+    "scrobble": {
+      "description": "Explorar manualmente una pista: “artista - título”.",
+      "options": {
+        "track": "Formato: Artista - Título"
+      }
+    },
+    "love": {
+      "description": "Me encanta la pista que se reproduce actualmente.",
+      "options": {}
+    },
+    "unlove": {
+      "description": "Elimina tu amor de la pista que se está reproduciendo actualmente.",
+      "options": {}
+    },
+    "loved": {
+      "description": "Muestra las pistas que te encantaron.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)"
+      }
+    },
+    "pin": {
+      "description": "Fija la pista que se reproduce actualmente en tu perfil.",
+      "options": {
+        "blurb": "Mensaje opcional con el pin."
+      }
+    },
+    "unpin": {
+      "description": "Elimina tu pista actualmente fijada.",
+      "options": {}
+    },
+    "pins": {
+      "description": "Mostrar las pistas fijadas de un usuario.",
+      "options": {
+        "user": "Usuario de Discord (por defecto eres tú)"
+      }
+    }
+  }
+}

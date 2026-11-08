@@ -1,0 +1,32 @@
+{
+  "name": "riffrelay-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty",
+    "check:i18n": "bun run scripts/check-locales.ts",
+    "generate:commands": "bun run scripts/generate-command-catalog.ts",
+    "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "@fontsource-variable/google-sans": "^5.3.2",
+    "@language-lit/material3-expressive": "1.2.2",
+    "highlight.js": "^11.12.0",
+    "lucide-react": "^1.70.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.13.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7"
+  },
+  "packageManager": "bun@1.4.4"
+}

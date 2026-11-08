@@ -1,0 +1,1185 @@
+{
+  "generatedFrom": "RiffRelay/RiffRelayBot",
+  "commands": [
+    {
+      "name": "help",
+      "description": "List all commands, or get help for a specific command.",
+      "category": "General",
+      "aliases": [],
+      "usage": "help [command]",
+      "examples": [
+        "help",
+        "help np"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": false,
+      "options": [
+        {
+          "name": "command",
+          "description": "Command to get help for",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "ping",
+      "description": "Check the bot's and Discord connection latency.",
+      "category": "General",
+      "aliases": [],
+      "usage": null,
+      "examples": [],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": false,
+      "options": []
+    },
+    {
+      "name": "invite",
+      "description": "Get an invite link to add BrainzBot to your server.",
+      "category": "General",
+      "aliases": [],
+      "usage": null,
+      "examples": [],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": false,
+      "options": []
+    },
+    {
+      "name": "bot",
+      "description": "Bot status: uptime, linked users, ListenBrainz connectivity.",
+      "category": "General",
+      "aliases": [
+        "status",
+        "stats",
+        "about"
+      ],
+      "usage": null,
+      "examples": [],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": []
+    },
+    {
+      "name": "setprefix",
+      "description": "Change the text-command prefix for this server.",
+      "category": "General",
+      "aliases": [],
+      "usage": "setprefix <prefix>",
+      "examples": [
+        "setprefix ?"
+      ],
+      "guildOnly": true,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": false,
+      "options": [
+        {
+          "name": "prefix",
+          "description": "New prefix (max 3 chars)",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "description": "Connect your ListenBrainz account using your API token.",
+      "category": "Account",
+      "aliases": [],
+      "usage": "login",
+      "examples": [
+        "login"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": false,
+      "options": []
+    },
+    {
+      "name": "logout",
+      "description": "Disconnect your ListenBrainz account from this bot.",
+      "category": "Account",
+      "aliases": [],
+      "usage": null,
+      "examples": [],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": false,
+      "options": []
+    },
+    {
+      "name": "me",
+      "description": "Show your linked ListenBrainz profile and stats.",
+      "category": "Account",
+      "aliases": [
+        "profile",
+        "user",
+        "whoami"
+      ],
+      "usage": null,
+      "examples": [],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": []
+    },
+    {
+      "name": "nowplaying",
+      "description": "Show what's currently playing.",
+      "category": "Listening",
+      "aliases": [
+        "np",
+        "now"
+      ],
+      "usage": "np [user]",
+      "examples": [
+        "np",
+        "np @user"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "recent",
+      "description": "Show the most recent listens.",
+      "category": "Listening",
+      "aliases": [
+        "history",
+        "recently"
+      ],
+      "usage": "recent [user] [count]",
+      "examples": [
+        "recent",
+        "recent @user 20"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "count",
+          "description": "Number of listens (max 25)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 25
+        }
+      ]
+    },
+    {
+      "name": "feed",
+      "description": "Show the ListenBrainz activity feed (scrobbles, pins).",
+      "category": "Listening",
+      "aliases": [
+        "activity"
+      ],
+      "usage": "feed [user]",
+      "examples": [
+        "feed"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "who",
+      "description": "Show what everyone in your voice channel is listening to.",
+      "category": "Listening",
+      "aliases": [
+        "vc",
+        "nowplayinghere"
+      ],
+      "usage": "who",
+      "examples": [
+        "who"
+      ],
+      "guildOnly": true,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": []
+    },
+    {
+      "name": "chart",
+      "description": "Top albums arranged as an emoji grid.",
+      "category": "Listening",
+      "aliases": [
+        "grid",
+        "topchart"
+      ],
+      "usage": "chart [user] [size] [period]",
+      "examples": [
+        "chart",
+        "chart 5x5 month",
+        "chart @user 3x3 all"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "size",
+          "description": "Grid size, e.g. 5x5 (max 10)",
+          "type": "string"
+        },
+        {
+          "name": "period",
+          "description": "week | month | year | all (default all)",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "streak",
+      "description": "Count consecutive days with scrobbles (current + longest).",
+      "category": "Listening",
+      "aliases": [],
+      "usage": "streak [user]",
+      "examples": [
+        "streak"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "top",
+      "description": "Show top artists, albums or tracks for a period.",
+      "category": "Stats",
+      "aliases": [
+        "topstats",
+        "toplist"
+      ],
+      "usage": "top [entity] [user] [period] [count]",
+      "examples": [
+        "top",
+        "top artists weekly",
+        "top albums @user 30d 20"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "entity",
+          "description": "What to rank (artists/albums/tracks/recordings)",
+          "type": "string",
+          "choices": [
+            {
+              "name": "artists",
+              "value": "artist"
+            },
+            {
+              "name": "albums",
+              "value": "album"
+            },
+            {
+              "name": "tracks",
+              "value": "track"
+            },
+            {
+              "name": "recordings",
+              "value": "recording"
+            }
+          ]
+        },
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "period",
+          "description": "week | month | year | all (default all)",
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "topartists",
+      "description": "Show your top artists.",
+      "category": "Stats",
+      "aliases": [
+        "topartists",
+        "artists"
+      ],
+      "usage": "topartists [user] [period] [count]",
+      "examples": [
+        "topartists",
+        "topartists @user weekly 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "period",
+          "description": "week | month | year | all (default all)",
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "topalbums",
+      "description": "Show your top albums.",
+      "category": "Stats",
+      "aliases": [
+        "topalbums",
+        "albums"
+      ],
+      "usage": "topalbums [user] [period] [count]",
+      "examples": [
+        "topalbums",
+        "topalbums @user weekly 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "period",
+          "description": "week | month | year | all (default all)",
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "toptracks",
+      "description": "Show your top tracks.",
+      "category": "Stats",
+      "aliases": [
+        "toptracks",
+        "tracks"
+      ],
+      "usage": "toptracks [user] [period] [count]",
+      "examples": [
+        "toptracks",
+        "toptracks @user weekly 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "period",
+          "description": "week | month | year | all (default all)",
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "toprecordings",
+      "description": "Show your top recordings.",
+      "category": "Stats",
+      "aliases": [
+        "toprecordings"
+      ],
+      "usage": "toprecordings [user] [period] [count]",
+      "examples": [
+        "toprecordings",
+        "toprecordings @user weekly 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "period",
+          "description": "week | month | year | all (default all)",
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "yesterday",
+      "description": "Top stats from yesterday.",
+      "category": "Stats",
+      "aliases": [],
+      "usage": "yesterday [user] [entity] [count]",
+      "examples": [
+        "yesterday",
+        "yesterday @user artists 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "entity",
+          "description": "What to rank (artists/albums/tracks/recordings)",
+          "type": "string",
+          "choices": [
+            {
+              "name": "artists",
+              "value": "artist"
+            },
+            {
+              "name": "albums",
+              "value": "album"
+            },
+            {
+              "name": "tracks",
+              "value": "track"
+            },
+            {
+              "name": "recordings",
+              "value": "recording"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "weekly",
+      "description": "Top stats for this week.",
+      "category": "Stats",
+      "aliases": [],
+      "usage": "weekly [user] [entity] [count]",
+      "examples": [
+        "weekly",
+        "weekly @user artists 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "entity",
+          "description": "What to rank (artists/albums/tracks/recordings)",
+          "type": "string",
+          "choices": [
+            {
+              "name": "artists",
+              "value": "artist"
+            },
+            {
+              "name": "albums",
+              "value": "album"
+            },
+            {
+              "name": "tracks",
+              "value": "track"
+            },
+            {
+              "name": "recordings",
+              "value": "recording"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "monthly",
+      "description": "Top stats for this month.",
+      "category": "Stats",
+      "aliases": [],
+      "usage": "monthly [user] [entity] [count]",
+      "examples": [
+        "monthly",
+        "monthly @user artists 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "entity",
+          "description": "What to rank (artists/albums/tracks/recordings)",
+          "type": "string",
+          "choices": [
+            {
+              "name": "artists",
+              "value": "artist"
+            },
+            {
+              "name": "albums",
+              "value": "album"
+            },
+            {
+              "name": "tracks",
+              "value": "track"
+            },
+            {
+              "name": "recordings",
+              "value": "recording"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "yearly",
+      "description": "Top stats for this year.",
+      "category": "Stats",
+      "aliases": [],
+      "usage": "yearly [user] [entity] [count]",
+      "examples": [
+        "yearly",
+        "yearly @user artists 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "entity",
+          "description": "What to rank (artists/albums/tracks/recordings)",
+          "type": "string",
+          "choices": [
+            {
+              "name": "artists",
+              "value": "artist"
+            },
+            {
+              "name": "albums",
+              "value": "album"
+            },
+            {
+              "name": "tracks",
+              "value": "track"
+            },
+            {
+              "name": "recordings",
+              "value": "recording"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "overall",
+      "description": "Top stats for all time.",
+      "category": "Stats",
+      "aliases": [
+        "alltime"
+      ],
+      "usage": "overall [user] [entity] [count]",
+      "examples": [
+        "overall",
+        "overall @user artists 10"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "entity",
+          "description": "What to rank (artists/albums/tracks/recordings)",
+          "type": "string",
+          "choices": [
+            {
+              "name": "artists",
+              "value": "artist"
+            },
+            {
+              "name": "albums",
+              "value": "album"
+            },
+            {
+              "name": "tracks",
+              "value": "track"
+            },
+            {
+              "name": "recordings",
+              "value": "recording"
+            }
+          ]
+        },
+        {
+          "name": "count",
+          "description": "How many to show (max 15)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 15
+        }
+      ]
+    },
+    {
+      "name": "plays",
+      "description": "How many plays an artist (or album/track) has.",
+      "category": "Stats",
+      "aliases": [
+        "playcount",
+        "playsfor"
+      ],
+      "usage": "plays [user] [entity] <name>",
+      "examples": [
+        "plays Radiohead",
+        "plays @user album In Rainbows"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        },
+        {
+          "name": "entity",
+          "description": "artist (default) | album | track",
+          "type": "string",
+          "choices": [
+            {
+              "name": "artist",
+              "value": "artist"
+            },
+            {
+              "name": "album",
+              "value": "album"
+            },
+            {
+              "name": "track",
+              "value": "track"
+            }
+          ]
+        },
+        {
+          "name": "name",
+          "description": "Artist / album / track name",
+          "type": "string",
+          "required": true,
+          "rest": true
+        }
+      ]
+    },
+    {
+      "name": "artist",
+      "description": "Look up an artist and their stats.",
+      "category": "Explore",
+      "aliases": [],
+      "usage": "artist <name> [user]",
+      "examples": [
+        "artist Radiohead",
+        "artist The Beatles @user"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "name",
+          "description": "Artist name",
+          "type": "string",
+          "required": true,
+          "rest": true
+        },
+        {
+          "name": "user",
+          "description": "Discord user for stats (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "album",
+      "description": "Look up an album and its plays.",
+      "category": "Explore",
+      "aliases": [],
+      "usage": "album <name> [user]",
+      "examples": [
+        "album In Rainbows",
+        "album In Rainbows @user"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "name",
+          "description": "Album title",
+          "type": "string",
+          "required": true,
+          "rest": true
+        },
+        {
+          "name": "user",
+          "description": "Discord user for stats (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "track",
+      "description": "Look up a track and its plays.",
+      "category": "Explore",
+      "aliases": [],
+      "usage": "track <name> [user]",
+      "examples": [
+        "track Paranoid Android"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "name",
+          "description": "Track title",
+          "type": "string",
+          "required": true,
+          "rest": true
+        },
+        {
+          "name": "user",
+          "description": "Discord user for stats (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "description": "Search MusicBrainz for artists, albums or tracks.",
+      "category": "Explore",
+      "aliases": [
+        "find"
+      ],
+      "usage": "search <query> [--type artist|album|track]",
+      "examples": [
+        "search Radiohead",
+        "search --type album Kid A"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "type",
+          "description": "What to search for",
+          "type": "string",
+          "choices": [
+            {
+              "name": "artist",
+              "value": "artist"
+            },
+            {
+              "name": "album",
+              "value": "album"
+            },
+            {
+              "name": "track",
+              "value": "track"
+            }
+          ]
+        },
+        {
+          "name": "query",
+          "description": "Search query",
+          "type": "string",
+          "required": true,
+          "rest": true
+        }
+      ]
+    },
+    {
+      "name": "mood",
+      "description": "Guess your listening mood from genre tags.",
+      "category": "Explore",
+      "aliases": [
+        "genre",
+        "vibe"
+      ],
+      "usage": "mood [user]",
+      "examples": [
+        "mood"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "fresh",
+      "description": "New releases from the last month.",
+      "category": "Explore",
+      "aliases": [
+        "newreleases",
+        "releases"
+      ],
+      "usage": "fresh [days]",
+      "examples": [
+        "fresh",
+        "fresh 7"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "days",
+          "description": "How far back (max 60)",
+          "type": "number",
+          "minValue": 1,
+          "maxValue": 60
+        }
+      ]
+    },
+    {
+      "name": "similar",
+      "description": "Show users with similar listening taste.",
+      "category": "Social",
+      "aliases": [],
+      "usage": "similar [user]",
+      "examples": [
+        "similar"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "taste",
+      "description": "Compare your taste with another user's (top-artists overlap).",
+      "category": "Social",
+      "aliases": [
+        "compare",
+        "match",
+        "compatibility"
+      ],
+      "usage": "taste [user]",
+      "examples": [
+        "taste @friend"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "The other Discord user",
+          "type": "user",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "scrobble",
+      "description": "Manually scrobble a track: “artist - title”.",
+      "category": "Scrobbling",
+      "aliases": [
+        "submit"
+      ],
+      "usage": "scrobble <artist - title>",
+      "examples": [
+        "scrobble Radiohead - Paranoid Android"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "track",
+          "description": "Format: Artist - Title",
+          "type": "string",
+          "required": true,
+          "rest": true
+        }
+      ]
+    },
+    {
+      "name": "love",
+      "description": "Love the currently playing track.",
+      "category": "Scrobbling",
+      "aliases": [
+        "like"
+      ],
+      "usage": "love",
+      "examples": [
+        "love"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": []
+    },
+    {
+      "name": "unlove",
+      "description": "Remove your love from the currently playing track.",
+      "category": "Scrobbling",
+      "aliases": [
+        "dislike",
+        "hate"
+      ],
+      "usage": "unlove",
+      "examples": [
+        "unlove"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": []
+    },
+    {
+      "name": "loved",
+      "description": "Show tracks you've loved.",
+      "category": "Scrobbling",
+      "aliases": [
+        "faves",
+        "favorites",
+        "loves"
+      ],
+      "usage": "loved [user]",
+      "examples": [
+        "loved"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "name": "pin",
+      "description": "Pin the currently playing track to your profile.",
+      "category": "Scrobbling",
+      "aliases": [],
+      "usage": "pin [blurb]",
+      "examples": [
+        "pin This is my jam right now"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "blurb",
+          "description": "Optional message with the pin",
+          "type": "string",
+          "rest": true
+        }
+      ]
+    },
+    {
+      "name": "unpin",
+      "description": "Remove your currently pinned track.",
+      "category": "Scrobbling",
+      "aliases": [],
+      "usage": "unpin",
+      "examples": [
+        "unpin"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": false,
+      "options": []
+    },
+    {
+      "name": "pins",
+      "description": "Show a user's pinned tracks.",
+      "category": "Scrobbling",
+      "aliases": [],
+      "usage": "pins [user]",
+      "examples": [
+        "pins"
+      ],
+      "guildOnly": false,
+      "slashOnly": false,
+      "hidden": false,
+      "slow": true,
+      "options": [
+        {
+          "name": "user",
+          "description": "Discord user (defaults to you)",
+          "type": "user"
+        }
+      ]
+    }
+  ]
+}
