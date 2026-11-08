@@ -1,4 +1,4 @@
-import { Check, Languages } from "lucide-react";
+import { ArrowRight, Check, Languages } from "lucide-react";
 import { Button, Menu as MaterialMenu } from "@language-lit/material3-expressive";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -52,6 +52,7 @@ export function HeaderActions({ copy, language, onLanguageChange, onMenuClose }:
       <Button
         variant="filled"
         size="small"
+        trailingIcon={<ArrowRight size={14} aria-hidden="true" />}
         className="header-cta"
         onClick={() => {
           onMenuClose();

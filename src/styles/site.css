@@ -383,6 +383,8 @@
 .step-number { color: var(--violet); font-size: 13px; font-weight: 700; letter-spacing: .08em; }
 .step-card h3 { margin: 15px 0 8px; color: var(--ink); font-size: 19px; letter-spacing: -.03em; }
 .step-card p { max-width: 320px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+.step-invite-link { display: inline-flex; min-height: 44px; align-items: center; gap: 7px; margin-top: 8px; color: var(--violet); font-size: 12px; font-weight: 700; text-decoration: none; }
+.step-invite-link:hover { color: var(--ink); }
 .step-connector { position: absolute; top: 27px; right: 20px; width: calc(100% - 78px); height: 1px; background: var(--line); }
 
 .api-section { padding: 83px 0; background: var(--page-raised); }

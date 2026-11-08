@@ -1,5 +1,6 @@
-import { Activity } from "lucide-react";
+import { Activity, ArrowUpRight } from "lucide-react";
 import { Text } from "@language-lit/material3-expressive";
+import { BOT_INVITE_URL } from "../../constants";
 import type { Copy } from "../../types";
 
 export function StepsSection({ copy }: { copy: Copy }) {
@@ -23,6 +24,12 @@ export function StepsSection({ copy }: { copy: Copy }) {
               <span className="step-number">0{index + 1}</span>
               <Text as="h3" variant="titleLarge">{title}</Text>
               <p>{body}</p>
+              {index === 0 && (
+                <a className="step-invite-link" href={BOT_INVITE_URL} target="_blank" rel="noreferrer">
+                  {copy.home.step1Action}
+                  <ArrowUpRight size={15} aria-hidden="true" />
+                </a>
+              )}
               {index < 2 && <span className="step-connector" aria-hidden="true" />}
             </article>
           ))}

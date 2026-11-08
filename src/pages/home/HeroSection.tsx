@@ -1,14 +1,12 @@
 import { Activity, ArrowRight } from "lucide-react";
 import { Button } from "@language-lit/material3-expressive";
 import { Link } from "react-router-dom";
+import { siDiscord } from "simple-icons";
 import type { Copy } from "../../types";
 import { DiscordPreview } from "../../components/DiscordPreview";
+import { BOT_INVITE_URL } from "../../constants";
 
 export function HeroSection({ copy }: { copy: Copy }) {
-  const scrollToCommands = () => document.getElementById("commands")?.scrollIntoView({
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-  });
-
   return (
     <section className="hero-section">
       <div className="container hero-layout">
@@ -19,8 +17,18 @@ export function HeroSection({ copy }: { copy: Copy }) {
             <p className="hero-lede">{copy.hero.body}</p>
           </div>
           <div className="hero-actions">
-            <Button className="hero-primary" variant="filled" size="small" trailingIcon={<ArrowRight size={16} />} onClick={scrollToCommands}>
-              {copy.hero.primary}
+            <Button
+              className="hero-primary"
+              variant="filled"
+              size="small"
+              leadingIcon={
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                  <path d={siDiscord.path} fill="currentColor" />
+                </svg>
+              }
+              onClick={() => window.open(BOT_INVITE_URL, "_blank", "noopener,noreferrer")}
+            >
+              {copy.header.invite}
             </Button>
             <Link className="secondary-link" to="/docs/api/overview">
               {copy.hero.secondary}<ArrowRight size={15} aria-hidden="true" />

@@ -41,8 +41,18 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: website-dist
+          path: dist/
+          if-no-files-found: error
+          include-hidden-files: true
 
   deploy:
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -51,3 +61,16 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: website-dist
+          path: dist
+      - name: Publish dist to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
