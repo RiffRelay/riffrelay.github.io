@@ -20,7 +20,7 @@ export function StepsSection({ copy }: { copy: Copy }) {
         </div>
         <div className="steps-grid">
           {steps.map(([title, body], index) => (
-            <article className="step-card" key={title} data-reveal="item">
+            <article className="step-card" key={`step-${index + 1}`} data-reveal="item">
               <span className="step-number">0{index + 1}</span>
               <Text as="h3" variant="titleLarge">{title}</Text>
               <p>{body}</p>
